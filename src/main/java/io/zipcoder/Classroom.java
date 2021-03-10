@@ -31,9 +31,10 @@ public class Classroom {
                 returnDouble = returnDouble + this.students[i].getAverageExamScore();
             }
         }
-        return returnDouble;
+        return returnDouble / this.students.length;
     }
 
+    //this adds nothing,,, bad
     public void addStudent(Student student){
         for(int i = 0; i < this.students.length; i++){
             if(this.students[i] == null){
