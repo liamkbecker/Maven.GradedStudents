@@ -1,4 +1,68 @@
 package io.zipcoder;
 
+import java.util.Arrays;
+
 public class Classroom {
+
+    private Student[] students;
+
+    public Classroom(int maxSize){
+        this.students = new Student[maxSize];
+    }
+
+    public Classroom(Student[] students){
+        this.students = students;
+    }
+
+    public Classroom(){
+        this.students = new Student[30];
+    }
+
+
+
+    public Student[] getStudents(){
+        return this.students;
+    }
+
+    public double getAverageExamScore(){
+        double returnDouble = 0;
+        for(int i = 0; i < this.students.length; i++){
+            if(this.students[i] != null){
+                returnDouble = returnDouble + this.students[i].getAverageExamScore();
+            }
+        }
+        return returnDouble;
+    }
+
+    public void addStudent(Student student){
+        for(int i = 0; i < this.students.length; i++){
+            if(this.students[i] == null){
+                this.students[i] = student;
+                break;
+            }
+        }
+    }
+
+    public void removeStudent(String firstName, String lastName){
+        for(int i = 0; i < this.students.length; i++){
+            if(this.students[i].getFirstName() == firstName && this.students[i].getLastName() == lastName){
+                this.students[i] = null;
+                Arrays.sort(this.students);
+                break;
+            }
+        }
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
