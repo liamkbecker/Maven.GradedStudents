@@ -31,11 +31,9 @@ public class Student {
 
 
 
-    public void setFirstName() { this.firstName = firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
-    public void setLastName() { this.lastName = lastName; }
-
-    public void setExamScores() { this.examScores = examScores; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
 
 
@@ -44,9 +42,25 @@ public class Student {
     }
 
     public void setExamScore(int examNumber, double newScore) {
-        this.examScores.set(examNumber, newScore);
+        this.examScores.set(examNumber - 1, newScore);
     }
 
+    public double getAverageExamScore() {
+        double returnDouble = 0;
+        for(int i = 0; i < this.examScores.size(); i++){
+            returnDouble = returnDouble + this.examScores.get(i);
+        }
+        return returnDouble / this.examScores.size();
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", examScores=" + examScores +
+                '}';
+    }
 }
 
 
