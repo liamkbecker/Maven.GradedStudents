@@ -75,6 +75,12 @@ public class ClassroomTest {
 
         //Then pt. 1
         Assert.assertEquals(c1.getStudents(), list1);
+
+        //When pt. 2
+        c1.removeStudent("Rinny", "Cariface");
+
+        //Then pt. 2
+        Assert.assertNotEquals(c1.getStudents(), list1);
     }
 
 }

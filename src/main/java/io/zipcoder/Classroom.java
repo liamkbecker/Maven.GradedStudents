@@ -1,6 +1,7 @@
 package io.zipcoder;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Classroom {
 
@@ -34,7 +35,6 @@ public class Classroom {
         return returnDouble / this.students.length;
     }
 
-    //this adds nothing,,, bad
     public void addStudent(Student student){
         for(int i = 0; i < this.students.length; i++){
             if(this.students[i] == null){
@@ -46,7 +46,7 @@ public class Classroom {
 
     public void removeStudent(String firstName, String lastName){
         for(int i = 0; i < this.students.length; i++){
-            if(this.students[i].getFirstName() == firstName && this.students[i].getLastName() == lastName){
+            if(this.students[i].getFirstName().equals(firstName) && this.students[i].getLastName().equals(lastName)){
                 this.students[i] = null;
                 Arrays.sort(this.students);
                 break;
