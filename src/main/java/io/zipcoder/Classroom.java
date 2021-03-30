@@ -35,13 +35,8 @@ public class Classroom {
         return returnDouble / this.students.length;
     }
 
-    public void addStudent(Student student){
-        for(int i = 0; i < this.students.length; i++){
-            if(this.students[i] == null){
-                this.students[i] = student;
-                break;
-            }
-        }
+    public void addStudent(Student student, int i){
+        this.students[i] = student;
     }
 
     public void removeStudent(String firstName, String lastName){
@@ -52,6 +47,11 @@ public class Classroom {
                 break;
             }
         }
+    }
+
+    public Student[] getStudentsByScore(){
+        Arrays.sort(this.students);
+        return this.students;
     }
 
 }
