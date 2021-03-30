@@ -43,17 +43,16 @@ public class Classroom {
         for(int i = 0; i < this.students.length; i++){
             if(this.students[i].getFirstName().equals(firstName) && this.students[i].getLastName().equals(lastName)){
                 this.students[i] = null;
-                Arrays.sort(this.students);
                 break;
             }
         }
     }
 
     public Student[] getStudentsByScore(){
-        Arrays.sort(this.students);
+        
         return this.students;
-    }
 
+    }
 }
 
 
